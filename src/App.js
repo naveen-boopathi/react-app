@@ -25,18 +25,15 @@ class App extends Component {
                   <span className="icon-bar" />
                   <span className="icon-bar" />
                 </button>
-                <a className="navbar-brand" href="#">
+                <Link className="navbar-brand" to="/bookRide">
                   Share Cars
-                </a>
+                </Link>
               </div>
               <div
                 className="collapse navbar-collapse"
                 id="bs-navbar-collapse-1"
               >
                 <ul className="nav navbar-nav">
-                  <li>
-                    <Link to="/bookRide">Book Ride</Link>
-                  </li>
                   <li>
                     <Link to="/rideDetails">Ride Details</Link>
                   </li>
