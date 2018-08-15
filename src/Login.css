@@ -1,0 +1,13 @@
+.panel {
+  width: 30%;
+  margin: 10% auto 0 auto;
+}
+
+.panel-title {
+  text-align: center;
+}
+
+.btn {
+  display: block;
+  margin: auto;
+}
