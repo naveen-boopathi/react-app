@@ -23,9 +23,9 @@ class OfferRide extends React.Component {
         style={{ marginTop: '5%', width: '40%' }}
       >
         <div className="panel-heading">
-          <h3 className="panel-title" style={{ textAlign: 'left' }}>
+          <h2 className="panel-title" style={{ textAlign: 'left' }}>
             Share Car Ride Registration Form
-          </h3>
+          </h2>
         </div>
         <div className="panel-body">
           <form className="form" onSubmit={this.handleSubmit}>

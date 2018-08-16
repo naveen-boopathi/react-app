@@ -1,4 +1,5 @@
 import React from 'react';
+import './BookRide.css';
 
 class BookRide extends React.Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class BookRide extends React.Component {
     return (
       <div className="panel panel-primary" style={{ width: '40%' }}>
         <div className="panel-heading">
-          <h3 className="panel-title">Book a Ride</h3>
+          <h2 className="panel-title">Book a Ride</h2>
         </div>
         <div className="panel-body">
           <p>
@@ -29,7 +30,7 @@ class BookRide extends React.Component {
           <div className="row">
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn-primary btn-br"
               onClick={this.showAllRides}
             >
               Show All Rides
@@ -38,7 +39,7 @@ class BookRide extends React.Component {
             <br />
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn-primary btn-br"
               onClick={this.offerARide}
             >
               Offer A Ride!

@@ -4,8 +4,20 @@ import Login from './Login.js';
 import BookRide from './BookRide.js';
 import RideDetails from './RideDetails.js';
 import OfferRide from './OfferRide.js';
+import Logout from './Logout.js';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { isLoggedIn: false, name: '' };
+    this.getLoginName = this.getLoginName.bind(this);
+  }
+
+  getLoginName(name) {
+    if (name) {
+      this.setState({ isLoggedIn: true, name: name });
+    }
+  }
   render() {
     return (
       <Router>
@@ -41,18 +53,36 @@ class App extends Component {
                     <Link to="/offerRide">Offer Ride</Link>
                   </li>
                 </ul>
-                <ul className="nav navbar-nav navbar-right">
-                  <li>
-                    <Link to="/">Login</Link>
-                  </li>
-                </ul>
+                {this.state.isLoggedIn ? (
+                  <ul className="nav navbar-nav navbar-right">
+                    <li>
+                      <a>Welcome {this.state.name}</a>
+                    </li>
+                    <li>
+                      <Link to="/logout">Logout</Link>
+                    </li>
+                  </ul>
+                ) : (
+                  <ul className="nav navbar-nav navbar-right">
+                    <li>
+                      <Link to="/">Login</Link>
+                    </li>
+                  </ul>
+                )}
               </div>
             </div>
           </nav>
-          <Route exact path="/" component={Login} />
+          <Route
+            exact
+            path="/"
+            component={props => (
+              <Login history={props.history} sendData={this.getLoginName} />
+            )}
+          />
           <Route path="/bookRide" component={BookRide} />
           <Route path="/rideDetails" component={RideDetails} />
           <Route path="/offerRide" component={OfferRide} />
+          <Route path="/logout" component={Logout} />
         </div>
       </Router>
     );

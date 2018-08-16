@@ -1,13 +1,9 @@
 .panel {
-  width: 30%;
+  width: 25%;
   margin: 10% auto 0 auto;
 }
 
 .panel-title {
+  padding: 5px 5px;
   text-align: center;
-}
-
-.btn {
-  display: block;
-  margin: auto;
 }
